@@ -8,8 +8,7 @@ package com.apcb.automaticHandler.theats;
 
 import java.util.Date;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 
 /**
@@ -17,6 +16,7 @@ import java.util.logging.Logger;
  * @author Demian
  */
 public class AutomaticProcesor extends Thread{
+     private final static Logger log = Logger.getLogger(AutomaticProcesor.class);
     int timeSleep;
     int repeat;
     boolean finish;
@@ -67,7 +67,7 @@ public class AutomaticProcesor extends Thread{
             try {
                 AutomaticProcesor.sleep(timeSleep);
             } catch (InterruptedException ex) {
-                Logger.getLogger(AutomaticProcesor.class.getName()).log(Level.SEVERE, null, ex);
+                //Logger.getLogger(AutomaticProcesor.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             repeat--;
